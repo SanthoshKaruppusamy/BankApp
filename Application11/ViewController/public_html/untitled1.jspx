@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1" binding="#{backingBeanScope.backing_untitled1.d1}">
+      <af:resource type="javascript">  
+      function initSpinner(evt){    
+   spinbox = evt.getSource();  
+   val = spinbox.getValue();  
+   if (val ==null){  
+    spinbox.setValue(0);  
+   }  
+      }  
+  </af:resource>
+ 
+      <af:messages binding="#{backingBeanScope.backing_untitled1.m1}" id="m1"/>
+      <af:form id="f1" binding="#{backingBeanScope.backing_untitled1.f1}"
+               usesUpload="true">
+        <af:panelFormLayout binding="#{backingBeanScope.backing_untitled1.pfl1}"
+                            id="pfl1">
+          <af:inputNumberSpinbox value="#{bindings.Id.inputValue}"
+                                 label="#{bindings.Id.hints.label}"
+                                 required="#{bindings.Id.hints.mandatory}"
+                                 columns="#{bindings.Id.hints.displayWidth}"
+                                 shortDesc="#{bindings.Id.hints.tooltip}"
+                                 binding="#{backingBeanScope.backing_untitled1.it1}"
+                                 id="it1" minimum="1" maximum="12">
+            <f:validator binding="#{bindings.Id.validator}"/>
+            <af:convertNumber groupingUsed="false"
+                              pattern="#{bindings.Id.format}"/>
+            <af:clientListener method="initSpinner" type="focus"/>
+          </af:inputNumberSpinbox>
+          <af:commandButton actionListener="#{bindings.CreateInsert1.execute}"
+                            text="CreateInsert1"
+                            disabled="#{!bindings.CreateInsert1.enabled}"
+                            binding="#{backingBeanScope.backing_untitled1.cb2}"
+                            id="cb2"/>
+          <af:commandButton actionListener="#{bindings.Commit.execute}"
+                            text="Commit"
+                            disabled="#{!bindings.Commit.enabled}"
+                            binding="#{backingBeanScope.backing_untitled1.cb1}"
+                            id="cb1"/>
+          <af:inputText value="#{bindings.RowID.inputValue}"
+                        label="#{bindings.RowID.hints.label}"
+                        required="#{bindings.RowID.hints.mandatory}"
+                        columns="#{bindings.RowID.hints.displayWidth}"
+                        maximumLength="#{bindings.RowID.hints.precision}"
+                        shortDesc="#{bindings.RowID.hints.tooltip}"
+                        binding="#{backingBeanScope.backing_untitled1.it2}"
+                        id="it2">
+            <f:validator binding="#{bindings.RowID.validator}"/>
+          </af:inputText>
+        </af:panelFormLayout>
+      </af:form>
+    </af:document>
+   
+   
+  </f:view>
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_untitled1-->
+</jsp:root>

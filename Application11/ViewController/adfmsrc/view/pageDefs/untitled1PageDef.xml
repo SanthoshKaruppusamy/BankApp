@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.65.57" id="untitled1PageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="InputnumberspinboxView1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="InputnumberspinboxView1Iterator" Refresh="deferred"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="InputnumberspinboxView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InputnumberspinboxView1Iterator" id="RowID">
+      <AttrNames>
+        <Item Value="RowID"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="AppModuleDataControl"/>
+    <action IterBinding="InputnumberspinboxView1Iterator" id="CreateInsert1"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

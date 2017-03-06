@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.65.57" id="untitled3PageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CountriesView1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="CountriesView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CountriesView1Iterator" id="CountriesView1">
+      <nodeDefinition DefName="model.VO.CountriesView" Name="CountriesView10">
+        <AttrNames>
+          <Item Value="CountryId"/>
+          <Item Value="CountryName"/>
+          <Item Value="RegionId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="CountriesView1Iterator" id="CreateInsert"
+            InstanceName="AppModuleDataControl.CountriesView1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="CountriesView1Iterator" id="Execute"
+            InstanceName="AppModuleDataControl.CountriesView1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

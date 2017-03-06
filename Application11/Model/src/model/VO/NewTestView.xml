@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="NewTestView"
+  Version="11.1.1.65.57"
+  InheritPersonalization="true"
+  SelectList="NewTest.ID_NEW, 
+       NewTest.START_DATE, 
+       NewTest.END_DATE, 
+       NewTest.ROWID"
+  FromList="NEW_TEST NewTest"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="NewTest"
+    Entity="model.EO.NewTest"/>
+  <ViewAttribute
+    Name="IdNew"
+    PrecisionRule="true"
+    EntityAttrName="IdNew"
+    EntityUsage="NewTest"
+    AliasName="ID_NEW"/>
+  <ViewAttribute
+    Name="StartDate"
+    PrecisionRule="true"
+    EntityAttrName="StartDate"
+    EntityUsage="NewTest"
+    AliasName="START_DATE"/>
+  <ViewAttribute
+    Name="EndDate"
+    PrecisionRule="true"
+    EntityAttrName="EndDate"
+    EntityUsage="NewTest"
+    AliasName="END_DATE"/>
+  <ViewAttribute
+    Name="RowID"
+    IsUpdateable="false"
+    PrecisionRule="true"
+    EntityAttrName="RowID"
+    EntityUsage="NewTest"
+    AliasName="ROWID"/>
+</ViewObject>
